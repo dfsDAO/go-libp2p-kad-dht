@@ -17,10 +17,10 @@ import (
 	"github.com/libp2p/go-libp2p-core/protocol"
 	"github.com/libp2p/go-libp2p-core/routing"
 
-	"github.com/libp2p/go-libp2p-kad-dht/metrics"
-	pb "github.com/libp2p/go-libp2p-kad-dht/pb"
-	"github.com/libp2p/go-libp2p-kad-dht/providers"
-	"github.com/libp2p/go-libp2p-kad-dht/rtrefresh"
+	"github.com/dfsdao/go-libp2p-kad-dht/metrics"
+	pb "github.com/dfsdao/go-libp2p-kad-dht/pb"
+	"github.com/dfsdao/go-libp2p-kad-dht/providers"
+	"github.com/dfsdao/go-libp2p-kad-dht/rtrefresh"
 	kb "github.com/libp2p/go-libp2p-kbucket"
 	"github.com/libp2p/go-libp2p-kbucket/peerdiversity"
 	record "github.com/libp2p/go-libp2p-record"
@@ -459,7 +459,7 @@ func (dht *IpfsDHT) doFixeLowPeersRoutine() {
 	// TODO Active Bootstrapping
 	// We should first use non-bootstrap peers we knew of from previous
 	// snapshots of the Routing Table before we connect to the bootstrappers.
-	// See https://github.com/libp2p/go-libp2p-kad-dht/issues/387.
+	// See https://github.com/dfsdao/go-libp2p-kad-dht/issues/387.
 	if dht.routingTable.Size() == 0 {
 		if len(dht.bootstrapPeers) == 0 {
 			// No point in continuing, we have no peers!
